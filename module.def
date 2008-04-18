@@ -1,0 +1,71 @@
+# ============================================================================
+# OpenPanel FTP.module for controlling pure-ftpd virtual access
+# Copyright (C) 2008 PanelSix V.O.F.
+# ============================================================================
+module FTP						< uuid 2442e77b-b4bb-42a3-a806-85a319214ec3
+								< version 1.0
+								< languages en_EN
+								< apitype xml
+								
+
+# ============================================================================
+# CLASSES
+# ============================================================================
+class FTP:Master				< uuid 82c1223c-0667-4a7f-8a19-ff42588c9360
+								< version 1
+								< requires Domain
+								< indexing manual
+								< parentrealm emailsuffix
+								< uniquein class
+								< uniqueclass FTP:User
+								< shortname ftp-user
+								< title FTP Account
+								< description FTP master account
+								< explanation ftpmaster.html
+								
+								< capabilities create delete update
+								
+	string id					: FTP Username
+								< gridwidth 98
+	
+	password password			: FTP Password
+								< crypt md5
+								< gridhide true
+								< regexp .*
+
+
+# ----------------------------------------------------------------------------
+class FTP:User					< uuid 38c0203e-7c1d-4752-99ce-0420ff956c05
+								< version 1
+								< requires Domain:Vhost
+								< indexing manual
+								< parentrealm emailsuffix
+								< uniquein class
+								< shortname ftp-user
+								< title FTP Account
+								< description FTP site account
+								< explanation ftpuser.html
+								
+								< capabilities create delete update
+
+	string id					: FTP Username
+								< gridwidth 98
+	
+	password password			: FTP Password
+								< crypt md5
+								< gridhide true
+
+
+# ============================================================================
+# AUTHD
+# ============================================================================
+authd fileops
+	match pureftpd.passwd		: /etc/pure-ftpd
+								< user root
+								< group root
+								< perms 0644
+	
+	match pureftpd.pdb			: /etc/pure-ftpd
+								< user root
+								< group root
+								< perms 0644
