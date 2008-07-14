@@ -284,7 +284,7 @@ bool purepw::add (const string &username, const string &pwhash,
 	}
 	fold.close ();
 	
-	if (! fnew.printf ("%s:%s:%u:%u::%s/./:::::3:::::::\n",
+	if (! fnew.printf ("%s:%s:%u:%u::%s/./::::::::::::\n",
 					   username.str(), pwhash.str(), uid, gid, home.str()))
 	{
 		fnew.close ();
