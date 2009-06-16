@@ -25,6 +25,7 @@ class FTP:Master				< uuid 82c1223c-0667-4a7f-8a19-ff42588c9360
 								< title FTP Account
 								< description FTP master account
 								< explanation ftpmaster.html
+								< emptytext No master accounts currently exist for this domain.
 								
 								< capabilities create delete update
 								
@@ -48,6 +49,7 @@ class FTP:User					< uuid 38c0203e-7c1d-4752-99ce-0420ff956c05
 								< title FTP Account
 								< description FTP site account
 								< explanation ftpuser.html
+								< emptytext No ftp user has been created for this website.
 								
 								< capabilities create delete update
 
