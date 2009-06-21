@@ -31,6 +31,7 @@ class FTP:Master				< uuid 82c1223c-0667-4a7f-8a19-ff42588c9360
 								
 	string id					: FTP Username
 								< gridwidth 98
+								< gridlabel Username
 	
 	password password			: FTP Password
 								< crypt md5
@@ -55,6 +56,7 @@ class FTP:User					< uuid 38c0203e-7c1d-4752-99ce-0420ff956c05
 
 	string id					: FTP Username
 								< gridwidth 98
+								< gridlabel Username
 	
 	password password			: FTP Password
 								< crypt md5
