@@ -1,23 +1,26 @@
 #!/usr/bin/make -f
 
+build: build-stamp
+build-stamp:
+	./configure
+	make
+	touch build-stamp
 
-BUILD_ROOT=$(CURDIR)/debian/tmp
-install:
-trm -rf ${BUILD_ROOT}
-tmkdir -p ${BUILD_ROOT}/var/opencore/modules/FTP.module
-tcp -rf ./ftpmodule.app ${BUILD_ROOT}/var/opencore/modules/FTP.module/
-tln -sf ftpmodule.app/exec ${BUILD_ROOT}/var/opencore/modules/FTP.module/action
-tcp module.xml ${BUILD_ROOT}/var/opencore/modules/FTP.module/
-tcp *.html ${BUILD_ROOT}/var/opencore/modules/FTP.module/
-tinstall -m 755 verify ${BUILD_ROOT}/var/opencore/modules/FTP.module/verify
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	cp -rf ./ftpmodule.app debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/
+	ln -sf ftpmodule.app/exec debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/action
+	cp module.xml debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/
+	cp *.html debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/
+	install -m 755 verify debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/verify
+	touch install-stamp
 
-build:
-t./configure
-tmake
-binary-indep:
+binary-indep: build install
 
-binary-arch binary: build install
-	if [ -d debian/tmp ] ; then dh_install -a --sourcedir=debian/tmp ; fi
+binary-arch: build install
 	dh_installdocs -a
 	dh_installdeb -a
 	dh_compress -a
@@ -26,5 +29,12 @@ binary-arch binary: build install
 	dh_gencontrol -a
 	dh_md5sums -a
 	dh_builddeb -a
+
+binary: binary-indep binary-arch
+
+clean:
+	rm -f install-stamp build-stamp
+	[ ! -f makeinclude ] || make clean
+	dh_clean
 
 .PHONY: build binary binary-arch binary-indep clean install

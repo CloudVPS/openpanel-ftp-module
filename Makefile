@@ -13,7 +13,7 @@ version.cpp:
 
 ftpmodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o ftpmodule.exe $(OBJ) $(LIBS) \
-	../opencore/api/c++/lib/libcoremodule.a -lz -lssl
+	/usr/lib/opencore/libcoremodule.a -lz -lssl
 
 clean:
 	rm -f *.o *.exe
@@ -22,4 +22,4 @@ clean:
 
 SUFFIXES: .cpp .o
 .cpp.o:
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -I../opencore/api/c++/include -c -g $<
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -I/usr/include/opencore -c -g $<
