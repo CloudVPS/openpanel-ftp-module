@@ -3,13 +3,13 @@ include makeinclude
 OBJ	= main.o version.o
 
 all: module.xml ftpmodule.exe
-	mkapp ftpmodule 
+	grace mkapp ftpmodule 
 
 module.xml: module.def
 	mkmodulexml < module.def > module.xml
 
 version.cpp:
-	mkversion version.cpp
+	grace mkversion version.cpp
 
 ftpmodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o ftpmodule.exe $(OBJ) $(LIBS) \
