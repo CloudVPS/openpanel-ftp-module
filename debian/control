@@ -2,11 +2,11 @@ Source: openpanel-mod-ftp
 Section: misc
 Priority: optional
 Maintainer: OpenPanel/Panel6 packager <packages@panelsix.com>
-Build-Depends: debhelper (>= 5)
+Build-Depends: debhelper (>= 5), libgrace, libgrace-devel, openpanel-mkmodulexml, openpanel-core, openpanel-devel, zlib1g-dev, libssl-dev
 Standards-Version: 3.7.2
 
 Package: openpanel-mod-ftp
 Architecture: any
-Depends: , openpanel-core (>= 0.8.3), openpanel-mod-domain, openpanel-mod-user, openpanel-mod-apache2, pure-ftpd
+Depends: openpanel-core (>= 0.8.3), openpanel-mod-domain, openpanel-mod-user, openpanel-mod-apache2, pure-ftpd
 Description: FTP service
  Openpanel FTP management module
