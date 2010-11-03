@@ -8,5 +8,5 @@ Standards-Version: 3.7.2
 Package: openpanel-mod-ftp
 Architecture: any
 Depends: openpanel-core (>= 0.8.3), openpanel-mod-domain, openpanel-mod-user, openpanel-mod-apache2, pure-ftpd
-Description: FTP service
+Description: OpenPanel module to configure the Pure FTPd service
  Openpanel FTP management module
