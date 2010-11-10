@@ -10,7 +10,7 @@
 Source: openpanel-mod-ftp
 Section: misc
 Priority: optional
-Maintainer: OpenPanel/Panel6 packager <packages@panelsix.com>
+Maintainer: OpenPanel packager <packages@openpanel.com
 Build-Depends: debhelper (>= 5), libgrace-dev, openpanel-mkmodulexml, openpanel-dev
 Standards-Version: 3.7.2
 
