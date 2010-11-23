@@ -117,7 +117,7 @@ void ftpmodule::createAccount (const value &data,
 	
 	if (vhost.strlen())
 	{
-		homedir.printf ("/web/%s", vhost.str());
+		homedir.printf ("/sites/%s", vhost.str());
 	}
 	
 	if ( (! uid) || (! gid) )
