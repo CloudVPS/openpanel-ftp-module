@@ -45,16 +45,16 @@ make
 %install
 BUILD_ROOT=$RPM_BUILD_ROOT
 rm -rf ${BUILD_ROOT}
-mkdir -p ${BUILD_ROOT}/var/opencore/modules/FTP.module
-cp -rf ./ftpmodule.app ${BUILD_ROOT}/var/opencore/modules/FTP.module/
-ln -sf ftpmodule.app/exec ${BUILD_ROOT}/var/opencore/modules/FTP.module/action
-cp module.xml ${BUILD_ROOT}/var/opencore/modules/FTP.module/
-cp *.html ${BUILD_ROOT}/var/opencore/modules/FTP.module/
-install -m 755 verify ${BUILD_ROOT}/var/opencore/modules/FTP.module/verify
+mkdir -p ${BUILD_ROOT}/var/openpanel/modules/FTP.module
+cp -rf ./ftpmodule.app ${BUILD_ROOT}/var/openpanel/modules/FTP.module/
+ln -sf ftpmodule.app/exec ${BUILD_ROOT}/var/openpanel/modules/FTP.module/action
+cp module.xml ${BUILD_ROOT}/var/openpanel/modules/FTP.module/
+cp *.html ${BUILD_ROOT}/var/openpanel/modules/FTP.module/
+install -m 755 verify ${BUILD_ROOT}/var/openpanel/modules/FTP.module/verify
 
 %post
-mkdir -p /var/opencore/conf/staging/FTP
-chown opencore:authd /var/opencore/conf/staging/FTP
+mkdir -p /var/openpanel/conf/staging/FTP
+chown openpanel-core:openpanel-authd /var/openpanel/conf/staging/FTP
 chkconfig --level 2345 pure-ftpd on
 service pure-ftpd restart >/dev/null 2>&1
 

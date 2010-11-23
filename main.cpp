@@ -8,7 +8,7 @@
 // section of the OpenPanel website on http://www.openpanel.com/
 
 
-#include <moduleapp.h>
+#include <openpanel-core/moduleapp.h>
 #include "ftpmodule.h"
 
 #include <grace/file.h>
@@ -242,9 +242,9 @@ purepw::~purepw (void)
 {
 }
 
-#define SPATH_PUREFTPD_PASSWD "/var/opencore/conf/staging/FTP/pureftpd.passwd"
-#define SPATH_PUREFTPD_NPASSWD "/var/opencore/conf/staging/FTP/pureftp.passwd.new"
-#define SPATH_PUREFTPD_PDB "/var/opencore/conf/staging/FTP/pureftpd.pdb"
+#define SPATH_PUREFTPD_PASSWD "/var/openpanel/conf/staging/FTP/pureftpd.passwd"
+#define SPATH_PUREFTPD_NPASSWD "/var/openpanel/conf/staging/FTP/pureftp.passwd.new"
+#define SPATH_PUREFTPD_PDB "/var/openpanel/conf/staging/FTP/pureftpd.pdb"
 
 bool purepw::add (const string &username, const string &pwhash,
 				  const string &home, uid_t uid, gid_t gid)

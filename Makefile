@@ -23,7 +23,7 @@ version.cpp:
 
 ftpmodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o ftpmodule.exe $(OBJ) $(LIBS) \
-	/usr/lib/opencore/libcoremodule.a
+	/usr/lib/openpanel-core/libcoremodule.a
 
 clean:
 	rm -f *.o *.exe

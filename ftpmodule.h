@@ -10,7 +10,7 @@
 #ifndef _ftpmodule_H
 #define _ftpmodule_H 1
 
-#include <moduleapp.h>
+#include <openpanel-core/moduleapp.h>
 #include <grace/system.h>
 #include <grace/configdb.h>
 

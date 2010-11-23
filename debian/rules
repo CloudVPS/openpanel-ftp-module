@@ -20,11 +20,11 @@ install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_installdirs
-	cp -rf ./ftpmodule.app debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/
-	ln -sf ftpmodule.app/exec debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/action
-	cp module.xml debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/
-	cp *.html debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/
-	install -m 755 verify debian/openpanel-mod-ftp/var/opencore/modules/FTP.module/verify
+	cp -rf ./ftpmodule.app debian/openpanel-mod-ftp/var/openpanel/modules/FTP.module/
+	ln -sf ftpmodule.app/exec debian/openpanel-mod-ftp/var/openpanel/modules/FTP.module/action
+	cp module.xml debian/openpanel-mod-ftp/var/openpanel/modules/FTP.module/
+	cp *.html debian/openpanel-mod-ftp/var/openpanel/modules/FTP.module/
+	install -m 755 verify debian/openpanel-mod-ftp/var/openpanel/modules/FTP.module/verify
 	touch install-stamp
 
 binary-indep: build install
