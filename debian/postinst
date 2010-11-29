@@ -28,12 +28,14 @@ set -e
 
 case "$1" in
     configure)
-mkdir -p /var/opencore/conf/staging/FTP
-chown opencore:authd /var/opencore/conf/staging/FTP
-ln -sf ../conf/PureDB /etc/pure-ftpd/auth/99-openpanel-puredb
-if [ -e /etc/pure-ftpd/pureftpd.pdb ] ; then mv /etc/pure-ftpd/pureftpd.pdb /etc/pure-ftpd/pureftpd.pdb.pre-openpanel ; fi
-pure-pw mkdb /etc/pure-ftpd/pureftpd.pdb -f /dev/null
-invoke-rc.d pure-ftpd restart
+		mkdir -p /var/opencore/conf/staging/FTP
+		chown opencore:authd /var/opencore/conf/staging/FTP
+		ln -sf ../conf/PureDB /etc/pure-ftpd/auth/99-openpanel-puredb
+		if [ -e /etc/pure-ftpd/pureftpd.pdb ] ; then mv /etc/pure-ftpd/pureftpd.pdb /etc/pure-ftpd/pureftpd.pdb.pre-openpanel ; fi
+		pure-pw mkdb /etc/pure-ftpd/pureftpd.pdb -f /dev/null
+		sed -e "s/^STANDALONE_OR_INETD=.*/STANDALONE_OR_INETD=standalone/" < /etc/default/pure-ftpd-common > /etc/default/pure-ftpd-common.new
+		mv /etc/default/pure-ftpd-common.new /etc/default/pure-ftpd-common
+		invoke-rc.d pure-ftpd restart
 
     ;;
 
