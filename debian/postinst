@@ -29,7 +29,7 @@ set -e
 case "$1" in
     configure)
 		mkdir -p /var/openpanel/conf/staging/FTP
-		chown opencore:openpanel-authd /var/openpanel/conf/staging/FTP
+		chown openpaenl-core:openpanel-authd /var/openpanel/conf/staging/FTP
 		ln -sf ../conf/PureDB /etc/pure-ftpd/auth/99-openpanel-puredb
 		if [ -e /etc/pure-ftpd/pureftpd.pdb ] ; then mv /etc/pure-ftpd/pureftpd.pdb /etc/pure-ftpd/pureftpd.pdb.pre-openpanel ; fi
 		pure-pw mkdb /etc/pure-ftpd/pureftpd.pdb -f /dev/null
