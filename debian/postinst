@@ -36,7 +36,6 @@ case "$1" in
 		sed -e "s/^STANDALONE_OR_INETD=.*/STANDALONE_OR_INETD=standalone/" < /etc/default/pure-ftpd-common > /etc/default/pure-ftpd-common.new
 		mv /etc/default/pure-ftpd-common.new /etc/default/pure-ftpd-common
 		invoke-rc.d pure-ftpd restart
-		invoke-rc.d openpanel-core reload
 
     ;;
 
