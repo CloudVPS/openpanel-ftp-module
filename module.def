@@ -13,7 +13,7 @@
 module FTP						< uuid 2442e77b-b4bb-42a3-a806-85a319214ec3
 								< version 1.0
 								< languages en_EN
-								< apitype xml
+								< apitype grace
 								< license GPLv3
 								< author OpenPanel
 								< url http://www.openpanel.com/
