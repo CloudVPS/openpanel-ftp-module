@@ -79,9 +79,9 @@ authd fileops
 	match pureftpd.passwd		: /etc/pure-ftpd
 								< user root
 								< group root
-								< perms 0644
+								< perms 0600
 	
 	match pureftpd.pdb			: /etc/pure-ftpd
 								< user root
 								< group root
-								< perms 0644
+								< perms 0600
