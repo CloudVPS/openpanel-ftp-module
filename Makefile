@@ -25,6 +25,15 @@ ftpmodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o ftpmodule.exe $(OBJ) $(LIBS) \
 	/usr/lib/openpanel-core/libcoremodule.a
 
+install:
+	mkdir -p ${DESTDIR}/var/openpanel/modules/FTP.module
+	mkdir -p ${DESTDIR}/var/openpanel/conf/staging/FTP
+	cp -rf ./ftpmodule.app    ${DESTDIR}/var/openpanel/modules/FTP.module/
+	ln -sf ftpmodule.app/exec ${DESTDIR}/var/openpanel/modules/FTP.module/action
+	cp     module.xml          ${DESTDIR}/var/openpanel/modules/FTP.module/module.xml
+	install -m 755 verify      ${DESTDIR}/var/openpanel/modules/FTP.module/verify
+	cp *.html ${DESTDIR}/var/openpanel/modules/FTP.module
+
 clean:
 	rm -f *.o *.exe
 	rm -rf ftpmodule.app
