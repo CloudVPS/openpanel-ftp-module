@@ -11,12 +11,12 @@ Source: openpanel-mod-ftp
 Section: misc
 Priority: optional
 Maintainer: OpenPanel packager <packages@openpanel.com>
-Build-Depends: debhelper (>= 5), libgrace-dev, openpanel-dev
+Build-Depends: debhelper (>= 5), libgrace-dev (>= 1.0), openpanel-dev (>= 1.1)
 Standards-Version: 3.7.2
 
 Package: openpanel-mod-ftp
 Architecture: any
-Pre-Depends: openpanel-core, openpanel-authd, pure-ftpd
-Depends: openpanel-core (>= 0.8.3), openpanel-mod-domain, openpanel-mod-user, openpanel-mod-apache2, pure-ftpd, ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: openpanel-core (>= 1.1), openpanel-authd (>= 1.1), pure-ftpd
+Depends: openpanel-core (>= 1.1), openpanel-mod-domain (>= 1.1), openpanel-mod-user (>= 1.1), openpanel-mod-apache2 (>= 1.1), pure-ftpd, ${shlibs:Depends}, ${misc:Depends}
 Description: OpenPanel module to configure the Pure FTPd service
  Openpanel FTP management module
