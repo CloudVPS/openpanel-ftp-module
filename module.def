@@ -33,7 +33,7 @@ class FTP:Master				< uuid 82c1223c-0667-4a7f-8a19-ff42588c9360
 								< title FTP Account
 								< description FTP master account
 								< explanation ftpmaster.html
-								< emptytext No master accounts currently exist for this domain.
+								< emptytext A master ftp account can access the home directory of the owning user for uploading/downloading files to any of the user's websites.
 								
 								< capabilities create delete update
 								
