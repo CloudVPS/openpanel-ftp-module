@@ -39,6 +39,7 @@ class FTP:Master				< uuid 82c1223c-0667-4a7f-8a19-ff42588c9360
 								
 	string id					: FTP Username
 								< regexp [:email:]
+								< example ftpmaster@example.net
 								< gridwidth 98
 								< gridlabel Username
 	
@@ -65,6 +66,7 @@ class FTP:User					< uuid 38c0203e-7c1d-4752-99ce-0420ff956c05
 
 	string id					: FTP Username
 								< regexp [:email:]
+								< example webmaster@www.example.net
 								< gridwidth 98
 	
 	password password			: FTP Password
